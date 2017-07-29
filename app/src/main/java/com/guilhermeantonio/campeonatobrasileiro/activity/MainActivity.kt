@@ -1,110 +1,58 @@
 package com.guilhermeantonio.campeonatobrasileiro.activity
 
 import android.os.Bundle
-import android.support.design.widget.NavigationView
-import android.support.v4.view.GravityCompat
-import android.support.v4.widget.DrawerLayout
-import android.support.v7.app.ActionBarDrawerToggle
+import android.support.v4.app.Fragment
+import android.support.v4.app.FragmentManager
+import android.support.v4.app.FragmentPagerAdapter
 import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.GridLayoutManager
-import android.support.v7.widget.Toolbar
-import android.view.MenuItem
-import android.view.View
 import com.guilhermeantonio.campeonatobrasileiro.R
-import com.guilhermeantonio.campeonatobrasileiro.adapter.TimeAdapter
-import com.guilhermeantonio.campeonatobrasileiro.model.TimeModel
-import kotlinx.android.synthetic.main.content_main.*
-import org.jetbrains.anko.longToast
-import java.util.ArrayList
+import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+import android.support.v4.view.ViewPager
+import com.guilhermeantonio.campeonatobrasileiro.fragment.SerieaFragment
+import com.guilhermeantonio.campeonatobrasileiro.fragment.SeriebFragment
 
-    private var listTimes = arrayListOf<TimeModel>()
-    private var mAdapter: TimeAdapter? = null
-    private var objWhisky: TimeModel? = null
+class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        configMenuLateralAndToolbar()
-
-
-    }
-
-    private fun configMenuLateralAndToolbar() {
-
-        val toolbar = findViewById(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
 
-        val drawer = findViewById(R.id.drawer_layout) as DrawerLayout
-        val toggle = ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
-        drawer.setDrawerListener(toggle)
-        toggle.syncState()
+        setupViewPager(viewpager)
+        tabs.setupWithViewPager(viewpager)
 
-        val navigationView = findViewById(R.id.nav_view) as NavigationView
-        navigationView.setNavigationItemSelectedListener(this)
 
     }
 
-    override fun onBackPressed() {
-        val drawer = findViewById(R.id.drawer_layout) as DrawerLayout
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START)
-        } else {
-            super.onBackPressed()
-        }
+    private fun setupViewPager(viewPager: ViewPager) {
+        val adapter = ViewPagerAdapter(supportFragmentManager)
+        adapter.addFragment(SerieaFragment(), "Série A")
+        adapter.addFragment(SeriebFragment(), "Série B")
+        viewPager.adapter = adapter
     }
 
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+    internal inner class ViewPagerAdapter(manager: FragmentManager) : FragmentPagerAdapter(manager) {
+        private val mFragmentList = arrayListOf<Fragment>()
+        private val mFragmentTitleList = arrayListOf<String>()
 
-        val id = item.itemId
-
-        if (id == R.id.nav_serie_a) {
-
-            mAdapter = TimeAdapter(TimeModel().getTimesSerieA(), this@MainActivity, object : TimeAdapter.OnItemClickListener {
-                override fun OnItemClickFoto(itemTime: TimeModel) {
-
-                    longToast(itemTime.nome.toString())
-
-
-
-                }
-
-            })
-
-
-            recycler_view_times.layoutManager = GridLayoutManager(this@MainActivity, 2)
-            recycler_view_times.adapter = mAdapter
-            progressBar.visibility = View.INVISIBLE
-
-        } else if (id == R.id.nav_serie_b) {
-
-
+        override fun getItem(position: Int): Fragment {
+            return mFragmentList[position]
         }
 
-        val drawer = findViewById(R.id.drawer_layout) as DrawerLayout
-        drawer.closeDrawer(GravityCompat.START)
-        return true
+        override fun getCount(): Int {
+            return mFragmentList.size
+        }
+
+        fun addFragment(fragment: Fragment, title: String) {
+            mFragmentList.add(fragment)
+            mFragmentTitleList.add(title)
+        }
+
+        override fun getPageTitle(position: Int): CharSequence {
+            return mFragmentTitleList[position]
+        }
     }
-
-//    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-//
-//        menuInflater.inflate(R.menu.main, menu)
-//        return true
-//    }
-
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//
-//        val id = item.itemId
-//
-//        if (id == R.id.action_settings) {
-//            return true
-//        }
-//
-//        return super.onOptionsItemSelected(item)
-//    }
 
 
 }
