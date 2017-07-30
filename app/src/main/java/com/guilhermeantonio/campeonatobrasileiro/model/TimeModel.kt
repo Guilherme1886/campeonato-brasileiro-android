@@ -11,6 +11,32 @@ class TimeModel {
     var nome: String? = null
     var emblema: Int? = null
 
+    companion object {
+
+        var america = "América-MG"
+        var vilanova = "Vila Nova"
+        var guarani = "Guarani"
+        var internacional = "Internacional"
+        var juventude = "Juventude"
+        var londrina = "Londrina"
+        var ceara = "Ceará"
+        var crb = "CRB"
+        var parana = "Paraná"
+        var goias = "Goiás"
+        var criciuma = "Criciúma"
+        var santacruz = "Santa Cruz"
+        var oeste = "Oeste"
+        var boaesporte = "Boa Esporte"
+        var brasildepelotas = "Brasil de Pelotas"
+        var paysandu = "Paysandu"
+        var luverdense = "Luverdense"
+        var figueirense = "Figueirense"
+        var abc = "ABC"
+        var nautico = "Náutico"
+
+
+    }
+
     fun getTimesSerieA(): ArrayList<TimeModel> {
 
         val listTimes = arrayListOf<TimeModel>()
@@ -126,83 +152,83 @@ class TimeModel {
         val listTimes = arrayListOf<TimeModel>()
 
         val objAmerica = TimeModel()
-        objAmerica.nome = "América-MG"
+        objAmerica.nome = america
         objAmerica.emblema = R.drawable.america
 
         val objVilaNova = TimeModel()
-        objVilaNova.nome = "Vila Nova"
+        objVilaNova.nome = vilanova
         objVilaNova.emblema = R.drawable.vilanova
 
         val objGuarani = TimeModel()
-        objGuarani.nome = "Guarani"
+        objGuarani.nome = guarani
         objGuarani.emblema = R.drawable.guarani
 
         val objInter = TimeModel()
-        objInter.nome = "Internacional"
+        objInter.nome = internacional
         objInter.emblema = R.drawable.internacional
 
         val objJuventude = TimeModel()
-        objJuventude.nome = "Juventude"
+        objJuventude.nome = juventude
         objJuventude.emblema = R.drawable.juventude
 
         val objLondrina = TimeModel()
-        objLondrina.nome = "Londrina"
+        objLondrina.nome = londrina
         objLondrina.emblema = R.drawable.londrina
 
         val objCeara = TimeModel()
-        objCeara.nome = "Ceará"
+        objCeara.nome = ceara
         objCeara.emblema = R.drawable.ceara
 
         val objCRB = TimeModel()
-        objCRB.nome = "CRB"
+        objCRB.nome = crb
         objCRB.emblema = R.drawable.crb
 
         val objParana = TimeModel()
-        objParana.nome = "Paraná"
+        objParana.nome = parana
         objParana.emblema = R.drawable.parana
 
         val objGoias = TimeModel()
-        objGoias.nome = "Goiás"
+        objGoias.nome = goias
         objGoias.emblema = R.drawable.goias
 
         val objCriciuma = TimeModel()
-        objCriciuma.nome = "Criciúma"
+        objCriciuma.nome = criciuma
         objCriciuma.emblema = R.drawable.criciuma
 
         val objSanta = TimeModel()
-        objSanta.nome = "Santa Cruz"
+        objSanta.nome = santacruz
         objSanta.emblema = R.drawable.santacruz
 
         val objOeste = TimeModel()
-        objOeste.nome = "Oeste"
+        objOeste.nome = oeste
         objOeste.emblema = R.drawable.oeste
 
         val objBoa = TimeModel()
-        objBoa.nome = "Boa Esporte"
+        objBoa.nome = boaesporte
         objBoa.emblema = R.drawable.boaesporte
 
         val objBrasil = TimeModel()
-        objBrasil.nome = "Brasil de Pelotas"
+        objBrasil.nome = brasildepelotas
         objBrasil.emblema = R.drawable.brasil
 
         val objPay = TimeModel()
-        objPay.nome = "Paysandu"
+        objPay.nome = paysandu
         objPay.emblema = R.drawable.paysandu
 
         val objLuverdense = TimeModel()
-        objLuverdense.nome = "Luverdense"
+        objLuverdense.nome = luverdense
         objLuverdense.emblema = R.drawable.luverdense
 
         val objFiguei = TimeModel()
-        objFiguei.nome = "Figueirense"
+        objFiguei.nome = figueirense
         objFiguei.emblema = R.drawable.figueirense
 
         val objABC = TimeModel()
-        objABC.nome = "ABC"
+        objABC.nome = abc
         objABC.emblema = R.drawable.abc
 
         val objNautico = TimeModel()
-        objNautico.nome = "Náutico"
+        objNautico.nome = nautico
         objNautico.emblema = R.drawable.nautico
 
         listTimes.add(objAmerica)
