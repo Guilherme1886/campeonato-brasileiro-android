@@ -31,19 +31,43 @@ class DetalheTimeActivity : AppCompatActivity() {
 
         setSupportActionBar(toolbar)
 
-
-        timeSelected(intent.getStringExtra("time"))
-
+        val time = "Jogos ${intent.getStringExtra("time")}"
+        toolbar_layout.title = time
+        timeSelected(time.replace("Jogos ", ""))
 
     }
 
-    private fun usePiscasso(file: String?, imageView: ImageView) {
+    private fun usePicasso(file: String?, imageView: ImageView) {
         Picasso.with(this).load(file).into(imageView)
     }
 
     private fun timeSelected(time: String) {
 
         when (time) {
+
+        //serie a
+            TimeModel.corinthians -> getJogosTime("corinthians")
+            TimeModel.gremio -> getJogosTime("gremio")
+            TimeModel.santos -> getJogosTime("santos")
+            TimeModel.flamengo -> getJogosTime("flamengo")
+            TimeModel.palmeiras -> getJogosTime("palmeiras")
+            TimeModel.sport -> getJogosTime("sport")
+            TimeModel.botafogo -> getJogosTime("botafogo")
+            TimeModel.vasco -> getJogosTime("vasco")
+            TimeModel.cruzeiro -> getJogosTime("cruzeiro")
+            TimeModel.pontepreta -> getJogosTime("ponte-preta")
+            TimeModel.chapecoense -> getJogosTime("chapecoense")
+            TimeModel.fluminense -> getJogosTime("fluminense")
+            TimeModel.atleticomg -> getJogosTime("atletico-mg")
+            TimeModel.bahia -> getJogosTime("bahia")
+            TimeModel.coritiba -> getJogosTime("coritiba")
+            TimeModel.atleticopr -> getJogosTime("atletico-pr")
+            TimeModel.avai -> getJogosTime("avai")
+            TimeModel.vitoria -> getJogosTime("vitoria")
+            TimeModel.atleticogo -> getJogosTime("atletico-go")
+            TimeModel.saopaulo -> getJogosTime("sao-paulo")
+
+        //serie b
             TimeModel.vilanova -> getJogosTime("vila-nova")
             TimeModel.america -> getJogosTime("america-mg")
             TimeModel.guarani -> getJogosTime("guarani")
@@ -97,12 +121,12 @@ class DetalheTimeActivity : AppCompatActivity() {
 
                                 //Mandante
                                 time_mandante_1.text = "${anterior?.mandante?.sigla} "
-                                usePiscasso(anterior?.mandante?.escudo?.grande, emblema_mandante_1)
+                                usePicasso(anterior?.mandante?.escudo?.grande, emblema_mandante_1)
                                 gols_mandante_1.text = "     ${anterior?.mandante?.placarOficial} x "
 
                                 //Visitante
                                 gols_visitante_1.text = "${anterior?.visitante?.placarOficial}     "
-                                usePiscasso(anterior?.visitante?.escudo?.grande, emblema_visitante_1)
+                                usePicasso(anterior?.visitante?.escudo?.grande, emblema_visitante_1)
                                 time_visitante_1.text = " ${anterior?.visitante?.sigla} "
 
                                 /*Jogo 1*/
@@ -116,12 +140,12 @@ class DetalheTimeActivity : AppCompatActivity() {
 
                                 //Mandante
                                 time_mandante_2.text = "${proximo?.get(0)?.mandante?.sigla} "
-                                usePiscasso(proximo?.get(0)?.mandante?.escudo?.grande, emblema_mandante_2)
+                                usePicasso(proximo?.get(0)?.mandante?.escudo?.grande, emblema_mandante_2)
                                 gols_mandante_2.text = "     ${proximo?.get(0)?.mandante?.placarOficial ?: ""} x "
 
                                 //Visitante
                                 gols_visitante_2.text = "${proximo?.get(0)?.visitante?.placarOficial ?: ""}     "
-                                usePiscasso(proximo?.get(0)?.visitante?.escudo?.grande, emblema_visitante_2)
+                                usePicasso(proximo?.get(0)?.visitante?.escudo?.grande, emblema_visitante_2)
                                 time_visitante_2.text = " ${proximo?.get(0)?.visitante?.sigla} "
 
                                 /*Jogo 2*/
@@ -136,12 +160,12 @@ class DetalheTimeActivity : AppCompatActivity() {
 
                                 //Mandante
                                 time_mandante_3.text = "${proximo?.get(1)?.mandante?.sigla} "
-                                usePiscasso(proximo?.get(1)?.mandante?.escudo?.grande, emblema_mandante_3)
+                                usePicasso(proximo?.get(1)?.mandante?.escudo?.grande, emblema_mandante_3)
                                 gols_mandante_3.text = "     ${proximo?.get(1)?.mandante?.placarOficial ?: ""} x "
 
                                 //Visitante
                                 gols_visitante_3.text = "${proximo?.get(1)?.visitante?.placarOficial ?: ""}     "
-                                usePiscasso(proximo?.get(1)?.visitante?.escudo?.grande, emblema_visitante_3)
+                                usePicasso(proximo?.get(1)?.visitante?.escudo?.grande, emblema_visitante_3)
                                 time_visitante_3.text = " ${proximo?.get(1)?.visitante?.sigla} "
 
                                 /*Jogo 3*/

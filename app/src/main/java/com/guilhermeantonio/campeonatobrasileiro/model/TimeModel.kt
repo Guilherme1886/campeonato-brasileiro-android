@@ -13,6 +13,29 @@ class TimeModel {
 
     companion object {
 
+        //serie a
+        val corinthians = "Corinthians"
+        val gremio = "Grêmio"
+        val santos = "Santos"
+        val flamengo = "Flamengo"
+        val palmeiras = "Palmeiras"
+        val sport = "Sport"
+        val botafogo = "Botafogo"
+        val vasco = "Vasco"
+        val cruzeiro = "Cruzeiro"
+        val pontepreta = "Ponte Preta"
+        val chapecoense = "Chapecoense"
+        val fluminense = "Fluminense"
+        val atleticomg = "Atlético-MG"
+        val bahia = "Bahia"
+        val coritiba = "Coritiba"
+        val atleticopr = "Atlético-PR"
+        val avai = "Avaí"
+        val saopaulo = "São Paulo"
+        val vitoria = "Vitória"
+        val atleticogo = "Atlético-GO"
+
+        //serie b
         var america = "América-MG"
         var vilanova = "Vila Nova"
         var guarani = "Guarani"
@@ -42,83 +65,83 @@ class TimeModel {
         val listTimes = arrayListOf<TimeModel>()
 
         val objCor = TimeModel()
-        objCor.nome = "Corinthians"
+        objCor.nome = corinthians
         objCor.emblema = R.drawable.cor
 
         val objGremio = TimeModel()
-        objGremio.nome = "Grêmio"
+        objGremio.nome = gremio
         objGremio.emblema = R.drawable.gremio
 
         val objSantos = TimeModel()
-        objSantos.nome = "Santos"
+        objSantos.nome = santos
         objSantos.emblema = R.drawable.santos
 
         val objFlamengo = TimeModel()
-        objFlamengo.nome = "Flamengo"
+        objFlamengo.nome = flamengo
         objFlamengo.emblema = R.drawable.flamengo
 
         val objPalmeiras = TimeModel()
-        objPalmeiras.nome = "Palmeiras"
+        objPalmeiras.nome = palmeiras
         objPalmeiras.emblema = R.drawable.palmeiras
 
         val objSport = TimeModel()
-        objSport.nome = "Sport"
+        objSport.nome = sport
         objSport.emblema = R.drawable.sport
 
         val objBotafogo = TimeModel()
-        objBotafogo.nome = "Botafogo"
+        objBotafogo.nome = botafogo
         objBotafogo.emblema = R.drawable.botafogo
 
         val objVasco = TimeModel()
-        objVasco.nome = "Vasco"
+        objVasco.nome = vasco
         objVasco.emblema = R.drawable.vasco
 
         val objCruzeiro = TimeModel()
-        objCruzeiro.nome = "Cruzeiro"
+        objCruzeiro.nome = cruzeiro
         objCruzeiro.emblema = R.drawable.cruzeiro
 
         val objPonte = TimeModel()
-        objPonte.nome = "Ponte Preta"
+        objPonte.nome = pontepreta
         objPonte.emblema = R.drawable.ponte_preta
 
         val objChape = TimeModel()
-        objChape.nome = "Chapecoense"
+        objChape.nome = chapecoense
         objChape.emblema = R.drawable.chape
 
         val objFlu = TimeModel()
-        objFlu.nome = "Fluminense"
+        objFlu.nome = fluminense
         objFlu.emblema = R.drawable.flu
 
         val objAtleticomg = TimeModel()
-        objAtleticomg.nome = "Atlético-MG"
+        objAtleticomg.nome = atleticomg
         objAtleticomg.emblema = R.drawable.atleticomg
 
         val objBahia = TimeModel()
-        objBahia.nome = "Bahia"
+        objBahia.nome = bahia
         objBahia.emblema = R.drawable.bahia
 
         val objCoritiba = TimeModel()
-        objCoritiba.nome = "Coritiba"
+        objCoritiba.nome = coritiba
         objCoritiba.emblema = R.drawable.coritiba
 
         val objAtleticopr = TimeModel()
-        objAtleticopr.nome = "Atlético-PR"
+        objAtleticopr.nome = atleticopr
         objAtleticopr.emblema = R.drawable.atleticopr
 
         val objAvai = TimeModel()
-        objAvai.nome = "Avaí"
+        objAvai.nome = avai
         objAvai.emblema = R.drawable.avai
 
         val objSP = TimeModel()
-        objSP.nome = "São Paulo"
+        objSP.nome = saopaulo
         objSP.emblema = R.drawable.sp
 
         val objVitoria = TimeModel()
-        objVitoria.nome = "Vitória"
+        objVitoria.nome = vitoria
         objVitoria.emblema = R.drawable.vitoria
 
         val objAtleticogo = TimeModel()
-        objAtleticogo.nome = "Atlético-GO"
+        objAtleticogo.nome = atleticogo
         objAtleticogo.emblema = R.drawable.atleticogo
 
         listTimes.add(objCor)

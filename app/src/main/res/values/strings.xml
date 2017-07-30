@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Campeonato Brasileiro</string>
+    <string name="app_name">Jogos dos Times da Série A e B</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -7,7 +7,7 @@
     <string name="action_settings">Settings</string>
     <string name="serie_a">Série A</string>
     <string name="serie_b">Série B</string>
-    <string name="title_activity_detalhe_time"/>
+    <string name="title_activity_detalhe_time" />
     <string name="large_text">
         "Material is the metaphor.\n\n"
 
