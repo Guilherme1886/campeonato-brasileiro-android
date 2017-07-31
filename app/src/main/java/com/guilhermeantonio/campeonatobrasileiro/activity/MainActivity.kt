@@ -9,10 +9,22 @@ import com.guilhermeantonio.campeonatobrasileiro.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 import android.support.v4.view.ViewPager
+import android.util.Log
 import com.guilhermeantonio.campeonatobrasileiro.fragment.SerieaFragment
 import com.guilhermeantonio.campeonatobrasileiro.fragment.SeriebFragment
+import com.guilhermeantonio.campeonatobrasileiro.model.TimeModel
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.ValueEventListener
+import org.jetbrains.anko.toast
+
 
 class MainActivity : AppCompatActivity() {
+
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +33,9 @@ class MainActivity : AppCompatActivity() {
 
         setupViewPager(viewpager)
         tabs.setupWithViewPager(viewpager)
+
+
+
 
     }
 
