@@ -1,16 +1,9 @@
 package com.guilhermeantonio.campeonatobrasileiro.activity
 
-import android.content.Intent
-import android.os.Build
 import android.os.Bundle
-import android.support.design.widget.FloatingActionButton
-import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.Toolbar
 import android.util.Log
-import android.view.View
 import android.widget.ImageView
-
 import com.guilhermeantonio.campeonatobrasileiro.R
 import com.guilhermeantonio.campeonatobrasileiro.model.TimeModel
 import com.guilhermeantonio.campeonatobrasileiro.rest.ApiClient
@@ -22,12 +15,21 @@ import kotlinx.android.synthetic.main.content_detalhe_time.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.text.SimpleDateFormat
+import java.util.*
+
 
 class DetalheTimeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detalhe_time)
+
+        configView()
+
+    }
+
+    private fun configView() {
 
         setSupportActionBar(toolbar)
 
@@ -113,6 +115,14 @@ class DetalheTimeActivity : AppCompatActivity() {
                                 /*Jogo 1*/
 
                                 //Dados do Jogo
+
+                                var nome_fase_jogo_1 = ""
+                                val jogo_hoje = "- Hoje"
+
+                                if (anterior?.nomeFase != "Fase única") nome_fase_jogo_1 = "- ${anterior?.nomeFase.toString()}"
+
+
+                                nome_campeonato_jogo_1.text = "${anterior?.nomeCampeonato} $nome_fase_jogo_1"
                                 dia_semana_jogo_1.text = "${anterior?.dataFormatada.toString().toUpperCase()}/2017 "
                                 local_jogo_1.text = "${anterior?.estadio.toString().toUpperCase()} "
                                 hora_jogo_1.text = anterior?.hora
@@ -132,6 +142,12 @@ class DetalheTimeActivity : AppCompatActivity() {
                                 /*Jogo 2*/
 
                                 //Dados do Jogo
+
+                                var nome_fase_jogo_2 = ""
+
+                                if (proximo?.get(0)?.nomeFase != "Fase única") nome_fase_jogo_2 = "- ${proximo?.get(0)?.nomeFase.toString()}"
+
+                                nome_campeonato_jogo_2.text = "${proximo?.get(0)?.nomeCampeonato} $nome_fase_jogo_2"
                                 dia_semana_jogo_2.text = "${proximo?.get(0)?.dataFormatada.toString().toUpperCase()}/2017 "
                                 local_jogo_2.text = "${proximo?.get(0)?.estadio.toString().toUpperCase()} "
                                 hora_jogo_2.text = proximo?.get(0)?.hora
@@ -152,6 +168,12 @@ class DetalheTimeActivity : AppCompatActivity() {
                                 /*Jogo 3*/
 
                                 //Dados do Jogo
+
+                                var nome_fase_jogo_3 = ""
+
+                                if (proximo?.get(1)?.nomeFase != "Fase única") nome_fase_jogo_3 = "- ${proximo?.get(1)?.nomeFase.toString()}"
+
+                                nome_campeonato_jogo_3.text = "${proximo?.get(1)?.nomeCampeonato} $nome_fase_jogo_3"
                                 dia_semana_jogo_3.text = "${proximo?.get(1)?.dataFormatada.toString().toUpperCase()}/2017 "
                                 local_jogo_3.text = "${proximo?.get(1)?.estadio.toString().toUpperCase()} "
                                 hora_jogo_3.text = proximo?.get(1)?.hora
@@ -188,5 +210,8 @@ class DetalheTimeActivity : AppCompatActivity() {
 
     }
 
-
 }
+
+
+//val df = SimpleDateFormat("dd MM yyyy, HH:mm")
+//val date = df.format(Calendar.getInstance().time)

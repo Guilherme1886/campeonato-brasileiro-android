@@ -30,7 +30,7 @@ class SeriebFragment : Fragment() {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-       // configView()
+         configView()
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -41,11 +41,30 @@ class SeriebFragment : Fragment() {
 
         val listTimes = arrayListOf<TimeModel>()
         var postListener: ValueEventListener? = null
+        val termo_json = "equipes-serie-b"
 
         val database = FirebaseDatabase.getInstance()
 
-        val equipe_1 = database.getReference("/equipes/3")
-        val equipe_2 = database.getReference("/equipes/4")
+        val equipe_1 = database.getReference("$termo_json/1")
+        val equipe_2 = database.getReference("$termo_json/2")
+        val equipe_3 = database.getReference("$termo_json/3")
+        val equipe_4 = database.getReference("$termo_json/4")
+        val equipe_5 = database.getReference("$termo_json/5")
+        val equipe_6 = database.getReference("$termo_json/6")
+        val equipe_7 = database.getReference("$termo_json/7")
+        val equipe_8 = database.getReference("$termo_json/8")
+        val equipe_9 = database.getReference("$termo_json/9")
+        val equipe_10 = database.getReference("$termo_json/10")
+        val equipe_11 = database.getReference("$termo_json/11")
+        val equipe_12 = database.getReference("$termo_json/12")
+        val equipe_13 = database.getReference("$termo_json/13")
+        val equipe_14 = database.getReference("$termo_json/14")
+        val equipe_15 = database.getReference("$termo_json/15")
+        val equipe_16 = database.getReference("$termo_json/16")
+        val equipe_17 = database.getReference("$termo_json/17")
+        val equipe_18 = database.getReference("$termo_json/18")
+        val equipe_19 = database.getReference("$termo_json/19")
+        val equipe_20 = database.getReference("$termo_json/20")
 
         postListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -82,10 +101,26 @@ class SeriebFragment : Fragment() {
             }
         }
 
-
-
         equipe_1.addValueEventListener(postListener)
         equipe_2.addValueEventListener(postListener)
+        equipe_3.addValueEventListener(postListener)
+        equipe_4.addValueEventListener(postListener)
+        equipe_5.addValueEventListener(postListener)
+        equipe_6.addValueEventListener(postListener)
+        equipe_7.addValueEventListener(postListener)
+        equipe_8.addValueEventListener(postListener)
+        equipe_9.addValueEventListener(postListener)
+        equipe_10.addValueEventListener(postListener)
+        equipe_11.addValueEventListener(postListener)
+        equipe_12.addValueEventListener(postListener)
+        equipe_13.addValueEventListener(postListener)
+        equipe_14.addValueEventListener(postListener)
+        equipe_15.addValueEventListener(postListener)
+        equipe_16.addValueEventListener(postListener)
+        equipe_17.addValueEventListener(postListener)
+        equipe_18.addValueEventListener(postListener)
+        equipe_19.addValueEventListener(postListener)
+        equipe_20.addValueEventListener(postListener)
 
     }
 

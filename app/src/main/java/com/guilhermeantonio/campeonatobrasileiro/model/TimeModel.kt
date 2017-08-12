@@ -37,17 +37,17 @@ class TimeModel {
         val atleticogo = "Atletico-GO"
 
         //serie b
-        var america = "América-MG"
+        var america = "America-MG"
         var vilanova = "Vila Nova"
         var guarani = "Guarani"
         var internacional = "Internacional"
         var juventude = "Juventude"
         var londrina = "Londrina"
-        var ceara = "Ceará"
+        var ceara = "Ceara"
         var crb = "CRB"
-        var parana = "Paraná"
-        var goias = "Goiás"
-        var criciuma = "Criciúma"
+        var parana = "Parana"
+        var goias = "Goias"
+        var criciuma = "Criciuma"
         var santacruz = "Santa Cruz"
         var oeste = "Oeste"
         var boaesporte = "Boa Esporte"
@@ -56,7 +56,7 @@ class TimeModel {
         var luverdense = "Luverdense"
         var figueirense = "Figueirense"
         var abc = "ABC"
-        var nautico = "Náutico"
+        var nautico = "Nautico"
 
 
     }

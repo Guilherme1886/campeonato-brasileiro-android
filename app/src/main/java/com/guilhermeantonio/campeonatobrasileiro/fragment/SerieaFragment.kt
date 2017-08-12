@@ -104,8 +104,6 @@ class SerieaFragment : Fragment() {
             }
         }
 
-
-
         equipe_1.addValueEventListener(postListener)
         equipe_2.addValueEventListener(postListener)
         equipe_3.addValueEventListener(postListener)
