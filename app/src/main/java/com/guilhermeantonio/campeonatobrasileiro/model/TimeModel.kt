@@ -9,13 +9,14 @@ import kotlin.collections.ArrayList
 
 class TimeModel {
     var nome: String? = null
-    var brasao: String? = null
+    var emblema: String? = null
+    var id: String? = null
 
     companion object {
 
         //serie a
         val corinthians = "Corinthians"
-        val gremio = "Grêmio"
+        val gremio = "Gremio"
         val santos = "Santos"
         val flamengo = "Flamengo"
         val palmeiras = "Palmeiras"
@@ -26,14 +27,14 @@ class TimeModel {
         val pontepreta = "Ponte Preta"
         val chapecoense = "Chapecoense"
         val fluminense = "Fluminense"
-        val atleticomg = "Atlético-MG"
+        val atleticomg = "Atletico-MG"
         val bahia = "Bahia"
         val coritiba = "Coritiba"
-        val atleticopr = "Atlético-PR"
-        val avai = "Avaí"
-        val saopaulo = "São Paulo"
-        val vitoria = "Vitória"
-        val atleticogo = "Atlético-GO"
+        val atleticopr = "Atletico-PR"
+        val avai = "Avai"
+        val saopaulo = "Sao Paulo"
+        val vitoria = "Vitoria"
+        val atleticogo = "Atletico-GO"
 
         //serie b
         var america = "América-MG"

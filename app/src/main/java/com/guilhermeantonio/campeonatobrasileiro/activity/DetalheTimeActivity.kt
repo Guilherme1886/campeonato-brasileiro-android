@@ -37,9 +37,7 @@ class DetalheTimeActivity : AppCompatActivity() {
 
     }
 
-    private fun usePicasso(file: String?, imageView: ImageView) {
-        Picasso.with(this).load(file).into(imageView)
-    }
+    private fun usePicasso(file: String?, imageView: ImageView) = Picasso.with(this).load(file).into(imageView)
 
     private fun timeSelected(time: String) {
 
@@ -190,12 +188,5 @@ class DetalheTimeActivity : AppCompatActivity() {
 
     }
 
-//    private fun configFloatButton() {
-//
-//        fab.setOnClickListener { view ->
-//            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                    .setAction("Action", null).show()
-//        }
-//
-//    }
+
 }

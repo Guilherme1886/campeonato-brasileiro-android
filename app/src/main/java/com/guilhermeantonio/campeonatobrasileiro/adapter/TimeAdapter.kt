@@ -49,7 +49,7 @@ class TimeAdapter(private val timesList: List<TimeModel>,
         fun bind(item: TimeModel, listener: OnItemClickListener) {
 
             nome.text = item.nome
-            Picasso.with(context).load(item.brasao).into(emblema)
+            Picasso.with(context).load(item.emblema).into(emblema)
 
             emblema.setOnClickListener { listener.OnItemClickFoto(item) }
         }

@@ -30,7 +30,7 @@ class SeriebFragment : Fragment() {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        configView()
+       // configView()
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -44,8 +44,8 @@ class SeriebFragment : Fragment() {
 
         val database = FirebaseDatabase.getInstance()
 
-        val equipe_1 = database.getReference("/equipes/1")
-        val equipe_2 = database.getReference("/equipes/3")
+        val equipe_1 = database.getReference("/equipes/3")
+        val equipe_2 = database.getReference("/equipes/4")
 
         postListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -54,7 +54,8 @@ class SeriebFragment : Fragment() {
 
                 val obj = TimeModel()
                 obj.nome = post.nome
-                obj.brasao = post.brasao
+                obj.emblema = post.emblema
+                obj.id = post.id
                 listTimes.add(obj)
 
 
