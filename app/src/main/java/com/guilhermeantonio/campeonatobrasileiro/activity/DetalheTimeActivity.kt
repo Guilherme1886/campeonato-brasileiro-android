@@ -112,20 +112,23 @@ class DetalheTimeActivity : AppCompatActivity() {
                                 val anterior = res.anterior
                                 val proximo = res.proximos
 
+                                val formato_data = SimpleDateFormat("dd/MM")
+                                val data_atual = formato_data.format(Calendar.getInstance().time)
+
                                 /*Jogo 1*/
 
                                 //Dados do Jogo
 
                                 var nome_fase_jogo_1 = ""
-                                val jogo_hoje = "- Hoje"
+                                val jogo_hoje = "- HOJE"
 
                                 if (anterior?.nomeFase != "Fase única") nome_fase_jogo_1 = "- ${anterior?.nomeFase.toString()}"
 
+                                if (anterior?.dia.equals(data_atual)) hora_jogo_1.text = "${anterior?.hora} $jogo_hoje" else hora_jogo_1.text = anterior?.hora
 
                                 nome_campeonato_jogo_1.text = "${anterior?.nomeCampeonato} $nome_fase_jogo_1"
                                 dia_semana_jogo_1.text = "${anterior?.dataFormatada.toString().toUpperCase()}/2017 "
                                 local_jogo_1.text = "${anterior?.estadio.toString().toUpperCase()} "
-                                hora_jogo_1.text = anterior?.hora
 
                                 //Mandante
                                 time_mandante_1.text = "${anterior?.mandante?.sigla} "
@@ -147,10 +150,12 @@ class DetalheTimeActivity : AppCompatActivity() {
 
                                 if (proximo?.get(0)?.nomeFase != "Fase única") nome_fase_jogo_2 = "- ${proximo?.get(0)?.nomeFase.toString()}"
 
+                                if (proximo?.get(0)?.dia.equals(data_atual)) hora_jogo_2.text = "${proximo?.get(0)?.hora} $jogo_hoje" else hora_jogo_2.text = proximo?.get(0)?.hora
+
                                 nome_campeonato_jogo_2.text = "${proximo?.get(0)?.nomeCampeonato} $nome_fase_jogo_2"
                                 dia_semana_jogo_2.text = "${proximo?.get(0)?.dataFormatada.toString().toUpperCase()}/2017 "
                                 local_jogo_2.text = "${proximo?.get(0)?.estadio.toString().toUpperCase()} "
-                                hora_jogo_2.text = proximo?.get(0)?.hora
+
 
                                 //Mandante
                                 time_mandante_2.text = "${proximo?.get(0)?.mandante?.sigla} "
@@ -173,10 +178,11 @@ class DetalheTimeActivity : AppCompatActivity() {
 
                                 if (proximo?.get(1)?.nomeFase != "Fase única") nome_fase_jogo_3 = "- ${proximo?.get(1)?.nomeFase.toString()}"
 
+                                if (proximo?.get(1)?.dia.equals(data_atual)) hora_jogo_3.text = "${proximo?.get(1)?.hora} $jogo_hoje" else hora_jogo_3.text = proximo?.get(1)?.hora
+
                                 nome_campeonato_jogo_3.text = "${proximo?.get(1)?.nomeCampeonato} $nome_fase_jogo_3"
                                 dia_semana_jogo_3.text = "${proximo?.get(1)?.dataFormatada.toString().toUpperCase()}/2017 "
                                 local_jogo_3.text = "${proximo?.get(1)?.estadio.toString().toUpperCase()} "
-                                hora_jogo_3.text = proximo?.get(1)?.hora
 
                                 //Mandante
                                 time_mandante_3.text = "${proximo?.get(1)?.mandante?.sigla} "
