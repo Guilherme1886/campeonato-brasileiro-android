@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Jogos dos Times da Série A e B</string>
+    <string name="label">Jogos Futebol</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
