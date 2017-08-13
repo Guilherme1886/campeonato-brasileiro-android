@@ -4,7 +4,6 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 
-
 /**
  * Created by Guilherme on 29/07/2017.
  */
@@ -15,7 +14,7 @@ class Mandante {
     var placarOficial: Int? = null
     @SerializedName("placar_penaltis")
     @Expose
-    var placarPenaltis: Any? = null
+    var placarPenaltis: String? = null
     @SerializedName("escudo")
     @Expose
     var escudo: Escudo? = null

@@ -131,16 +131,35 @@ class DetalheTimeActivity : AppCompatActivity() {
                                 local_jogo_1.text = "${anterior?.estadio.toString().toUpperCase()} "
 
                                 //Mandante
+
+                                if (anterior?.mandante?.placarPenaltis != null) {
+                                    gols_mandante_1.text = "     ${anterior.mandante?.placarOficial ?: ""} (${anterior.mandante?.placarPenaltis}) x "
+                                } else {
+                                    gols_mandante_1.text = "     ${anterior?.mandante?.placarOficial ?: ""} x "
+                                }
+
+
                                 time_mandante_1.text = "${anterior?.mandante?.sigla} "
                                 usePicasso(anterior?.mandante?.escudo?.grande, emblema_mandante_1)
-                                gols_mandante_1.text = "     ${anterior?.mandante?.placarOficial} x "
 
                                 //Visitante
-                                gols_visitante_1.text = "${anterior?.visitante?.placarOficial}     "
+
+                                if (anterior?.visitante?.placarPenaltis != null) {
+                                    gols_visitante_1.text = "(${anterior.visitante?.placarPenaltis}) ${anterior.visitante?.placarOficial ?: ""}     "
+                                } else {
+                                    gols_visitante_1.text = "${anterior?.visitante?.placarOficial ?: ""}     "
+                                }
+
                                 usePicasso(anterior?.visitante?.escudo?.grande, emblema_visitante_1)
                                 time_visitante_1.text = " ${anterior?.visitante?.sigla} "
 
                                 /*Jogo 1*/
+
+
+
+
+
+
 
                                 /*Jogo 2*/
 
@@ -158,16 +177,34 @@ class DetalheTimeActivity : AppCompatActivity() {
 
 
                                 //Mandante
+
+                                if (proximo?.get(0)?.mandante?.placarPenaltis != null) {
+                                    gols_mandante_2.text = "     ${proximo[0].mandante?.placarOficial ?: ""} (${proximo[0].mandante?.placarPenaltis}) x "
+                                } else {
+                                    gols_mandante_2.text = "     ${proximo?.get(0)?.mandante?.placarOficial ?: ""} x "
+                                }
+
                                 time_mandante_2.text = "${proximo?.get(0)?.mandante?.sigla} "
                                 usePicasso(proximo?.get(0)?.mandante?.escudo?.grande, emblema_mandante_2)
-                                gols_mandante_2.text = "     ${proximo?.get(0)?.mandante?.placarOficial ?: ""} x "
 
                                 //Visitante
-                                gols_visitante_2.text = "${proximo?.get(0)?.visitante?.placarOficial ?: ""}     "
+
+                                if (proximo?.get(0)?.visitante?.placarPenaltis != null) {
+                                    gols_visitante_2.text = "(${proximo[0].visitante?.placarPenaltis}) ${proximo[0].visitante?.placarOficial ?: ""}     "
+                                } else {
+                                    gols_visitante_2.text = "${proximo?.get(0)?.visitante?.placarOficial ?: ""}     "
+                                }
+
                                 usePicasso(proximo?.get(0)?.visitante?.escudo?.grande, emblema_visitante_2)
                                 time_visitante_2.text = " ${proximo?.get(0)?.visitante?.sigla} "
 
                                 /*Jogo 2*/
+
+
+
+
+
+
 
 
                                 /*Jogo 3*/
@@ -185,12 +222,24 @@ class DetalheTimeActivity : AppCompatActivity() {
                                 local_jogo_3.text = "${proximo?.get(1)?.estadio.toString().toUpperCase()} "
 
                                 //Mandante
+
+                                if (proximo?.get(1)?.mandante?.placarPenaltis != null) {
+                                    gols_mandante_3.text = "     ${proximo[1].mandante?.placarOficial ?: ""} (${proximo[1].mandante?.placarPenaltis}) x "
+                                } else {
+                                    gols_mandante_3.text = "     ${proximo?.get(1)?.mandante?.placarOficial ?: ""} x "
+                                }
+
                                 time_mandante_3.text = "${proximo?.get(1)?.mandante?.sigla} "
                                 usePicasso(proximo?.get(1)?.mandante?.escudo?.grande, emblema_mandante_3)
-                                gols_mandante_3.text = "     ${proximo?.get(1)?.mandante?.placarOficial ?: ""} x "
 
                                 //Visitante
-                                gols_visitante_3.text = "${proximo?.get(1)?.visitante?.placarOficial ?: ""}     "
+
+                                if (proximo?.get(1)?.visitante?.placarPenaltis != null) {
+                                    gols_visitante_3.text = "(${proximo[1].visitante?.placarPenaltis}) ${proximo[1].visitante?.placarOficial ?: ""}     "
+                                } else {
+                                    gols_visitante_3.text = "${proximo?.get(1)?.visitante?.placarOficial ?: ""}     "
+                                }
+
                                 usePicasso(proximo?.get(1)?.visitante?.escudo?.grande, emblema_visitante_3)
                                 time_visitante_3.text = " ${proximo?.get(1)?.visitante?.sigla} "
 

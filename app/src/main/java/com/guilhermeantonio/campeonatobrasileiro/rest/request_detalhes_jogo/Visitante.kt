@@ -15,7 +15,7 @@ class Visitante {
     var placarOficial: Int? = null
     @SerializedName("placar_penaltis")
     @Expose
-    var placarPenaltis: Any? = null
+    var placarPenaltis: String? = null
     @SerializedName("escudo")
     @Expose
     var escudo: Escudo? = null
